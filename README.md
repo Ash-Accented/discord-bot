@@ -36,10 +36,12 @@
 
 
 
-(REQUIRES HOSTING A UNIQUE BOT, RUNNING CODE CLONED FROM MY GITHUB, ON YOUR MACHINE)
+### ***(REQUIRES HOSTING A UNIQUE BOT, RUNNING CODE CLONED FROM MY GITHUB, ON YOUR MACHINE)***
 /play_local_directory *[local_directory_string]*
-> <sub>//Plays the mp3, wav, or flac files in a local directory of choice, as if it were a playlist </sub>
+> <sub>//Plays the mp3, wav, or flac files in a local directory of choice, as if it were a playlist.</sub>
+
 /play_local_audio_file *[local_file_path_string]*
+> <sub>//Plays a mp3, wav, or flac file in a local directory of choice.</sub>
 
 
 
