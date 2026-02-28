@@ -2,6 +2,11 @@
 ## An earnest attempt at programming a discord bot, capable of running an emulated version of doom live in a text-channel/VC channel.
 ### PS: Also does other things I required for utility, like simple music commands for personal reasons.
 
+
+
+
+
+## CHECKLIST:
 - [x] Make own version of remoteDiscordShell https://github.com/EnriqueMoran/remoteDiscordShell, allowing me to run commands from a discord channel => Bot => Host Machine 
   - Made /bash_command capable of running commands and returning the stdout
 
