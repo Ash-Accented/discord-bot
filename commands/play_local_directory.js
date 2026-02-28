@@ -41,13 +41,14 @@ async function playSong(guild, track, audioDirectoryString, interaction) {
   } catch (error) {
     console.log(`ERROR WHEN PLAYING RESOURCE: ${error}`);
   }
+  
+  serverQueue.player.removeAllListeners(AudioPlayerStatus.Idle);
+  serverQueue.player.removeAllListeners('error');
 
   serverQueue.player.on(AudioPlayerStatus.Playing, async () => {
      console.log(`The audio player has started playing! ${track} `);       //Audio player confirmation
   });
   
-  serverQueue.player.removeAllListeners(AudioPlayerStatus.Idle);
-  serverQueue.player.removeAllListeners('error');
 
   serverQueue.player.on(AudioPlayerStatus.Idle, async () => {
     await serverQueue.songs.shift();
@@ -59,11 +60,11 @@ async function playSong(guild, track, audioDirectoryString, interaction) {
   serverQueue.player.on('error', error => {
       console.error(`Error: ${error.message} with resource ${error.resource.metadata.title}`);
   }); 
-
 }
+//PLAYSONG FUNCTION 
 
 
-
+//DATA PROPERTY AND EXECUTE FUNCTION 
 module.exports = {
   data: new SlashCommandBuilder()       //Creation of a new SlashCommandBuilder
     .setName('play_local_directory')       //Command Name (/play_local_audio_file)
@@ -95,7 +96,7 @@ module.exports = {
         textChannel: interaction.channel,
         voiceChannel: null,
         connection: null,
-        songs: audioFiles,
+        songs: audioFiles,        //List/Array
         player: createAudioPlayer(),
         volume: 1,
         playing: false,
@@ -117,7 +118,6 @@ module.exports = {
       
       queueConstruct.connection = connection;         //Set the connection of the queueConstruct to connection
       connection.subscribe(queueConstruct.player);       //This links the audio player to the specific voice channel (specified above with joinVoiceChannel), so that audio can be transmitted to all users within that channel
-      const mentionNickname = interaction.member.user.id;       //Gets the id of the user for the sake of pinging them
       //const memberNickname = interaction.member.user.displayName;       //Get username of server member issuing command (nickname if exists, otherwise username)
       
       //const serverQueue = queue.get(interaction.guild.id);        //Tracks the mapping of songs for the server as a queue
@@ -125,6 +125,7 @@ module.exports = {
       
     }
     else {
+      audioFiles.forEach(audioFile => serverQueue.songs.set(audioFiles));
       return interaction.channel.send(`Playlist Added! \n\nLength: ${audioDirectory.length}`);
     }
     
