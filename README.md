@@ -19,22 +19,27 @@
 
 ## USAGE
 ```
+/bash_command [string_args]
+/ping
+/play_local_directory [local_directory_string]
+/play_local_audio_file [local_file_path_string]
+```
+
+
 /bash_command *[string_args]* 
-> //Executes a bash_command on a virtual machine in docker running alpine:v3.23 (where the bot currently runs), was thinking to modify this to execute the command from the host machine, and return the standard output of the virtual machine.
+> <sub>//Executes a bash_command on a virtual machine in docker running alpine:v3.23 (where the bot currently runs), was thinking to modify this to execute the command from the host machine, and return the standard output of the virtual machine.</sub>
+
 
 
 /ping
-> //Delivers the messaging ping of the bot
+> <sub>//Delivers the messaging ping of the bot</sub>
 
 
 
 (REQUIRES HOSTING A UNIQUE BOT, RUNNING CODE CLONED FROM MY GITHUB, ON YOUR MACHINE)
 /play_local_directory *[local_directory_string]*
-> //Plays the mp3, wav, or flac files in a local directory of choice, as if it were a playlist
+> <sub>//Plays the mp3, wav, or flac files in a local directory of choice, as if it were a playlist </sub>
 /play_local_audio_file *[local_file_path_string]*
-```
-
-
 
 
 
