@@ -7,12 +7,12 @@
 
 
 ## CHECKLIST:
-- [x] \##### Make own version of remoteDiscordShell https://github.com/EnriqueMoran/remoteDiscordShell, allowing me to run commands from a discord channel => Bot => Host Machine 
-  - \###### Made /bash_command capable of running commands and returning the stdout
+- [x] **Make own version of remoteDiscordShell https://github.com/EnriqueMoran/remoteDiscordShell, allowing me to run commands from a discord channel => Bot => Host Machine**
+  - ###### Made /bash_command capable of running commands and returning the stdout
 
-- [x] \##### Run the discord bot from a docker container that has capability to run doom on an emulator.
+- [x] **Run the discord bot from a docker container that has capability to run doom on an emulator.**
 
-- [ ] \##### \(Optional) Make a slash command driven 'text editor' for the discord bot that allows for file editing from a discord channel
+- [ ] **\(Optional) Make a slash command driven 'text editor' for the discord bot that allows for file editing from a discord channel**
   - ###### At the present moment, nano, vi, and other text editors don't work from the channel. My idea was using shell commands that the virtual machine can execute, with discord slash commands that map to bash commands for a barebones, makeshift text-editor capable of applying changes to files via a discord channel.
     - ###### This wouldn't be necessary to run doom on a discord bot, however being able to operate your docker container from a discord channel without ANY external assistance would be amusing, despite the impracticality.
 
